@@ -92,7 +92,7 @@ export function PreOrderSection({ onPreOrderClick }: PreOrderSectionProps) {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                Предзаказы открыты до <span className="text-[#D9443D]">31 декабря 2025 года</span>. Всего <span className="text-[#D9443D]">20 наборов</span>.
+                Предзаказы открыты до <span className="text-[#D9443D]">31 декабря 2025 года</span>. Всего <span className="text-[#D9443D]">50 наборов</span>.
               </motion.p>
 
               <motion.div

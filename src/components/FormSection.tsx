@@ -104,7 +104,7 @@ export function FormSection() {
               
               <h2 className="mb-2 text-3xl md:text-4xl">Присоединиться к списку предзаказа</h2>
               <p className="text-muted-foreground">
-                Будьте среди первых 20 пар, получивших свои уникальные LEGO-фигурки
+                Будьте среди первых 50 пар, получивших свои уникальные LEGO-фигурки
               </p>
             </div>
 
@@ -134,12 +134,12 @@ export function FormSection() {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <Label htmlFor="contact" className="mb-2 block">
-                  Telegram или Instagram
+                  Почта
                 </Label>
                 <Input
                   id="contact"
                   type="text"
-                  placeholder="@имя_пользователя"
+                  placeholder="name@example.com"
                   value={formData.contact}
                   onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                   required
