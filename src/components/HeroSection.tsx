@@ -178,11 +178,14 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
               }}
               className="rounded-3xl overflow-hidden shadow-2xl backdrop-blur-sm relative z-10"
             >
-              <img
-                src={heroImage}
-                alt="LEGO пара в рамке"
-                className="w-full h-auto rounded-3xl"
-              />
+              <div className="relative nft-bg rounded-3xl p-6 flex justify-center items-center">
+  <img
+    src={heroImage}
+    alt="LEGO пара в рамке"
+    className="w-full h-auto rounded-3xl nft-spin"
+  />
+</div>
+
             </motion.div>
             
             {/* Decorative glow behind image */}
