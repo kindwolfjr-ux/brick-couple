@@ -75,7 +75,6 @@ export function Footer() {
           </div>
 
           <p className="text-xs text-muted-foreground mt-6">
-            LEGO® является товарным знаком компании LEGO Group, которая не спонсирует и не одобряет этот проект.
           </p>
         </motion.div>
       </div>

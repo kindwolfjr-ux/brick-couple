@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { Heart, Sparkles } from "lucide-react";
-import heroImage from "figma:asset/af3b355b35b1e2960b8334bc510eb564c3e8c367.png";
+import heroImage from "../assets/lego-mockup-new.png";
 
 interface HeroSectionProps {
   onPreOrderClick: () => void;
@@ -108,7 +108,9 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Создай свою LEGO-минифигурку по фото
+              Создай свою <br />
+              LEGO&#8209;минифигурку<br />
+              по фото
             </motion.h1>
             
             <motion.p
@@ -117,7 +119,8 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Персональный подарок для пар, созданный из настоящих деталей LEGO.
+              Персональный подарок для пар,<br />
+              созданный из настоящих деталей LEGO.
             </motion.p>
 
             <motion.div
@@ -161,7 +164,7 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
                 ease: "easeInOut",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-radial from-white/60 via-[#FFD000]/20 to-transparent rounded-full blur-3xl scale-150" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[55%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl -z-10 opacity-60" />
             </motion.div>
             
             <motion.div
@@ -175,15 +178,18 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
               }}
               className="rounded-3xl overflow-hidden shadow-2xl backdrop-blur-sm relative z-10"
             >
-              <img
-                src={heroImage}
-                alt="LEGO пара в рамке"
-                className="w-full h-auto rounded-3xl"
-              />
+              <div className="relative nft-bg rounded-3xl p-6 flex justify-center items-center">
+  <img
+    src={heroImage}
+    alt="LEGO пара в рамке"
+    className="w-full h-auto rounded-3xl nft-spin"
+  />
+</div>
+
             </motion.div>
             
             {/* Decorative glow behind image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl -z-10 opacity-60" />
+            <div className="absolute top-1/2 left-0 right-0 translate-y-[-50%] h-[80%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl -z-10 opacity-60" />
           </motion.div>
         </div>
       </div>

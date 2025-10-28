@@ -2445,3 +2445,28 @@ html {
   syntax: "*";
   inherits: false
 }
+
+@keyframes gentleSwing {
+  0% {
+    transform: rotateY(-10deg) rotateX(1deg);
+  }
+  50% {
+    transform: rotateY(10deg) rotateX(-1deg);
+  }
+  100% {
+    transform: rotateY(-10deg) rotateX(1deg);
+  }
+}
+
+.nft-spin {
+  animation: gentleSwing 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+  transition: transform 0.4s ease;
+}
+
+.nft-spin:hover {
+  animation-play-state: paused;
+  transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+}
