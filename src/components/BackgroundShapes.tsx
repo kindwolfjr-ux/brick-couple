@@ -3,7 +3,7 @@ import { Heart } from "lucide-react";
 
 export function BackgroundShapes() {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {/* Large floating heart - top left */}
       <motion.div
         className="absolute top-[10%] left-[5%] text-[#D9443D] opacity-10"
@@ -62,20 +62,20 @@ export function BackgroundShapes() {
         </div>
       </motion.div>
 
-      {/* Circle - middle right */}
-      <motion.div
-        className="absolute top-[35%] right-[15%] w-40 h-40 rounded-full bg-[#D9443D] opacity-8 blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          y: [0, 20, 0],
-        }}
-        transition={{
-          duration: 9,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 0.5,
-        }}
-      />
+      {/* Circle - middle right (уменьшенная подложка) */}
+<motion.div
+  className="absolute top-[42%] right-[20%] w-28 h-28 rounded-full bg-[#D9443D] opacity-8 blur-2xl"
+  animate={{
+    scale: [1, 1.2, 1],
+    y: [0, 20, 0],
+  }}
+  transition={{
+    duration: 9,
+    repeat: Infinity,
+    ease: "easeInOut",
+    delay: 0.5,
+  }}
+/>
 
       {/* Small heart - bottom left */}
       <motion.div
