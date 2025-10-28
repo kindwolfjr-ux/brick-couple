@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { Heart, Sparkles } from "lucide-react";
-import heroImage from "figma:asset/af3b355b35b1e2960b8334bc510eb564c3e8c367.png";
+import heroImage from "../assets/lego-mockup-new.png";
 
 interface HeroSectionProps {
   onPreOrderClick: () => void;
