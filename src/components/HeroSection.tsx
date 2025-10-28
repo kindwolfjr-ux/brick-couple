@@ -108,8 +108,8 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Создай свою <br />
-              LEGO&#8209;минифигурку<br />
+              Создадим вашу <br />
+              Лего&#8209;пару<br />
               по фото
             </motion.h1>
             
@@ -119,8 +119,8 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Персональный подарок для пар,<br />
-              созданный из настоящих деталей LEGO.
+              Вы присылаете фото<br />
+              мы собираем с теплом и вниманием.
             </motion.p>
 
             <motion.div

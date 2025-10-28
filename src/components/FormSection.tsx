@@ -102,9 +102,9 @@ export function FormSection() {
                 <Heart className="w-8 h-8 text-[#D9443D]" />
               </motion.div>
               
-              <h2 className="mb-2 text-3xl md:text-4xl">Присоединиться к списку предзаказа</h2>
+              <h2 className="mb-2 text-3xl md:text-4xl">Присоединиться к предзаказу</h2>
               <p className="text-muted-foreground">
-                Будьте среди первых 50 пар, получивших свои уникальные LEGO-фигурки
+                Будьте среди первых, кто получит свою Лего-пару
               </p>
             </div>
 
