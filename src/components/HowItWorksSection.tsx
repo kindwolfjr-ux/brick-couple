@@ -40,7 +40,11 @@ export function HowItWorksSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section ref={ref} className="py-16 relative overflow-hidden">
+    <section
+  id="how-it-works"
+  ref={ref}
+  className="py-16 relative overflow-hidden"
+>
       {/* Background parallax decorative elements */}
       <motion.div
         className="absolute top-20 left-[5%] w-16 h-16 rounded-lg bg-[#D9443D]/5 rotate-12"

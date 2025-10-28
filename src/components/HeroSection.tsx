@@ -108,89 +108,102 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Создадим вашу <br />
-              Лего&#8209;пару<br />
+              Создай свою <br />
+              LEGO-минифигурку<br />
               по фото
             </motion.h1>
-            
+
             <motion.p
               className="text-lg md:text-xl text-muted-foreground mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Вы присылаете фото<br />
-              мы собираем с теплом и вниманием.
+              Персональный подарок для пар, <br />
+              созданный из настоящих деталей LEGO.
             </motion.p>
 
+            {/* Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <Button
-                onClick={onPreOrderClick}
-                size="lg"
-                className="bg-gradient-to-r from-[#D9443D] to-[#D9443D]/90 hover:from-[#D9443D]/90 hover:to-[#D9443D]/80 text-white rounded-full px-10 py-6 shadow-lg hover:shadow-2xl transition-all relative overflow-hidden group"
-              >
-                <span className="relative z-10">Сделать предзаказ</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.6 }}
-                />
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+                {/* Основная кнопка */}
+                <Button
+                  onClick={onPreOrderClick}
+                  size="lg"
+                  className="bg-gradient-to-r from-[#D9443D] to-[#D9443D]/90 hover:from-[#D9443D]/90 hover:to-[#D9443D]/80 text-white rounded-full px-10 py-6 shadow-lg hover:shadow-2xl transition-all relative overflow-hidden group"
+                >
+                  <span className="relative z-10">Сделать предзаказ</span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.6 }}
+                  />
+                </Button>
+
+                {/* Вторичная кнопка */}
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() =>
+                    document
+                      .getElementById("how-it-works")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="border border-white/40 bg-white/50 backdrop-blur-md text-[#D9443D] hover:bg-white/70 rounded-full px-10 py-6 shadow-md transition-all relative z-20"
+                >
+                  Подробнее
+                </Button>
+              </div>
             </motion.div>
           </motion.div>
 
           {/* Right: Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
-          >
-            {/* Radial spotlight glow - like frosted glass */}
-            <motion.div
-              className="absolute inset-0 -z-20"
-              animate={{
-                scale: [1, 1.05, 1],
-                opacity: [0.4, 0.6, 0.4],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[55%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl -z-10 opacity-60" />
-            </motion.div>
-            
-            <motion.div
-              animate={{
-                y: [0, -12, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="rounded-3xl overflow-hidden shadow-2xl backdrop-blur-sm relative z-10"
-            >
-              <div className="relative nft-bg rounded-3xl p-6 flex justify-center items-center">
-  <img
-    src={heroImage}
-    alt="LEGO пара в рамке"
-    className="w-full h-auto rounded-3xl nft-spin"
-  />
-</div>
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, delay: 0.3 }}
+  className="relative flex justify-center items-center"
+>
+  {/* Decorative glow behind image — уменьшенная подложка */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[40%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl -z-10 opacity-60" />
 
-            </motion.div>
-            
-            {/* Decorative glow behind image */}
-            <div className="absolute top-1/2 left-0 right-0 translate-y-[-50%] h-[80%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl -z-10 opacity-60" />
-          </motion.div>
+  {/* Radial spotlight glow — уменьшенный фон */}
+<motion.div
+  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20"
+  animate={{
+    scale: [1, 1.05, 1],
+    opacity: [0.4, 0.6, 0.4],
+  }}
+  transition={{
+    duration: 4,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+>
+  <div className="w-[60%] h-[45%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl opacity-60" />
+</motion.div>
+
+  {/* Image */}
+  <motion.div
+    animate={{ y: [0, -12, 0] }}
+    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+    className="rounded-3xl overflow-hidden shadow-2xl backdrop-blur-sm relative z-10"
+  >
+    <div className="relative rounded-3xl p-6 flex justify-center items-center">
+      <img
+        src={heroImage}
+        alt="LEGO пара в рамке"
+        className="w-full h-auto rounded-3xl"
+      />
+    </div>
+  </motion.div>
+</motion.div>
+
         </div>
       </div>
     </section>
