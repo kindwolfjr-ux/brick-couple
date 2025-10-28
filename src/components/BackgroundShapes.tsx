@@ -3,7 +3,7 @@ import { Heart } from "lucide-react";
 
 export function BackgroundShapes() {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {/* Large floating heart - top left */}
       <motion.div
         className="absolute top-[10%] left-[5%] text-[#D9443D] opacity-10"

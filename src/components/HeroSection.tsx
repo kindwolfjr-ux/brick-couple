@@ -170,11 +170,11 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
   className="relative flex justify-center items-center"
 >
   {/* Decorative glow behind image — уменьшенная подложка */}
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[40%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl -z-10 opacity-60" />
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[45%] bg-gradient-to-br from-[#D9443D]/15 via-[#FFD000]/10 to-[#2451B6]/10 rounded-3xl blur-xl -z-10 opacity-40" />
 
-  {/* Radial spotlight glow — уменьшенный фон */}
+{/* Radial spotlight glow (уменьшенная подложка) */}
 <motion.div
-  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20"
+  className="absolute -z-20"
   animate={{
     scale: [1, 1.05, 1],
     opacity: [0.4, 0.6, 0.4],
@@ -185,8 +185,9 @@ export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
     ease: "easeInOut",
   }}
 >
-  <div className="w-[60%] h-[45%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-3xl opacity-60" />
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[45%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-2xl opacity-50" />
 </motion.div>
+
 
   {/* Image */}
   <motion.div
