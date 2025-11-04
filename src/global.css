@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/postcss";
+
+/* ---------- 1️⃣ Импорт шрифта ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ---------- 2️⃣ Tailwind ---------- */
+
+
+/* ---------- 3️⃣ Цветовая палитра и переменные ---------- */
+:root {
+  --background: #050300;
+  --text-main: #ffffff;
+  --text-secondary: #fff4e6;
+  --gold-light: #ffd479;
+  --gold-dark: #e9c46a;
+  --glass-bg: rgba(10, 10, 10, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- 4️⃣ Базовые настройки ---------- */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--background);
+  color: var(--text-main);
+  font-family: 'Manrope', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ---------- 5️⃣ Тексты ---------- */
+h1, h2, h3, p {
+  margin: 0;
+}
+
+h1 {
+  color: var(--text-main);
+  font-weight: 800;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+h2, h3 {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ---------- 6️⃣ Кнопки ---------- */
+.btn-gold {
+  background: linear-gradient(180deg, var(--gold-light), var(--gold-dark));
+  color: var(--background);
+  padding: 12px 30px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  box-shadow: 0 0 15px rgba(255, 212, 121, 0.35);
+}
+
+.btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 25px rgba(255, 212, 121, 0.5);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-secondary);
+  padding: 12px 30px;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- 7️⃣ Карточки ---------- */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+/* ---------- 8️⃣ Базовые секции ---------- */
+section {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 70px 0;
+  }
+}
+
+/* ---------- 9️⃣ Контейнер ---------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- 🔟 Выровненный текст и сетки ---------- */
+.text-center {
+  text-align: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* ---------- 11️⃣ Мягкие переходы между фонами ---------- */
+.bg-gradient-fade {
+  background: linear-gradient(
+    180deg,
+    rgba(5, 3, 0, 0.9) 0%,
+    rgba(5, 3, 0, 1) 60%,
+    rgba(5, 3, 0, 0.9) 100%
+  );
+}
+
+/* ---------- 12️⃣ Анимации свечения ---------- */
+@keyframes softGlow {
+  0% { box-shadow: 0 0 15px rgba(255, 212, 121, 0.2); }
+  50% { box-shadow: 0 0 35px rgba(255, 212, 121, 0.4); }
+  100% { box-shadow: 0 0 15px rgba(255, 212, 121, 0.2); }
+}
+
+.glow-gold {
+  animation: softGlow 6s infinite ease-in-out;
+}
+
+/* ---------- 13️⃣ Скроллбар под стиль сайта ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #0c0b09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}

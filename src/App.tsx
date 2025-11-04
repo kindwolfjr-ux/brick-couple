@@ -1,28 +1,23 @@
-import { HeroSection } from "./components/HeroSection";
-import { HowItWorksSection } from "./components/HowItWorksSection";
-import { PreOrderSection } from "./components/PreOrderSection";
-import { FormSection } from "./components/FormSection";
-import { Footer } from "./components/Footer";
-import { BackgroundShapes } from "./components/BackgroundShapes";
-import { Toaster } from "./components/ui/sonner";
+import HeroSection from "./components/HeroSection";
+import HowItWorksSection from "./components/HowItWorksSection";
+import PreOrderSection from "./components/PreOrderSection";
+import Footer from "./components/Footer";
+import "./global.css";
 
 export default function App() {
-  const scrollToForm = () => {
+  const handlePreOrderClick = () => {
     const formSection = document.getElementById("pre-order-form");
     if (formSection) {
-      formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      formSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <div className="min-h-screen relative">
-      <BackgroundShapes />
-      <HeroSection onPreOrderClick={scrollToForm} />
+    <div className="bg-black text-white font-sans overflow-x-hidden">
+      <HeroSection onPreOrderClick={handlePreOrderClick} />
       <HowItWorksSection />
-      <PreOrderSection onPreOrderClick={scrollToForm} />
-      <FormSection />
+      <PreOrderSection onPreOrderClick={handlePreOrderClick} />
       <Footer />
-      <Toaster position="top-center" />
     </div>
   );
 }
