@@ -1,0 +1,38 @@
+.
+├── .vscode
+│   └── settings.json
+├── index.html
+├── package-lock.json
+├── package.json
+├── project-tree.txt
+├── README.md
+├── src
+│   ├── App.tsx
+│   ├── assets
+│   │   ├── 7612119a4d186397c920c81af3c57c87f7e8c448.png
+│   │   ├── af3b355b35b1e2960b8334bc510eb564c3e8c367.png
+│   │   ├── c8deb0e5c87bccdcbe79de0b21bfd9a6b7a40eb8.png
+│   │   ├── d9dd8fdabfb9b6b96c3d82995607942f226772d7.png
+│   │   ├── dc9624ce4367f5558fb783f7a60913045ba6642a.png
+│   │   └── lego-mockup-new.png
+│   ├── Attributions.md
+│   ├── components
+│   │   ├── BackgroundShapes.tsx
+│   │   ├── figma
+│   │   ├── Footer.tsx
+│   │   ├── FormSection.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── HowItWorksSection.tsx
+│   │   ├── PreOrderSection.tsx
+│   │   └── ui
+│   ├── guidelines
+│   │   └── Guidelines.md
+│   ├── imports
+│   │   └── Frame1.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── styles
+│       └── globals.css
+└── vite.config.ts
+
+10 directories, 26 files

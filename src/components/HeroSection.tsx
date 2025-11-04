@@ -1,212 +1,102 @@
-import { motion } from "motion/react";
-import { Button } from "./ui/button";
-import { Heart, Sparkles } from "lucide-react";
-import heroImage from "../assets/lego-mockup-new.png";
+import React from "react";
+import heroBg from "../assets/Hero_BG.png";
+import ornament from "../assets/игрушка.png";
 
 interface HeroSectionProps {
   onPreOrderClick: () => void;
 }
 
-export function HeroSection({ onPreOrderClick }: HeroSectionProps) {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onPreOrderClick }) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Floating hearts decoration - more variety */}
-      <motion.div
-        className="absolute top-20 left-[10%] text-[#D9443D] opacity-20"
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 5, -5, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        <Heart className="w-10 h-10 fill-current" />
-      </motion.div>
-
-      <motion.div
-        className="absolute top-40 right-[15%] text-[#2451B6] opacity-15"
-        animate={{
-          y: [0, -15, 0],
-          rotate: [0, -5, 5, 0],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      >
-        <Heart className="w-8 h-8 fill-current" />
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-32 left-[20%] text-[#FFD000] opacity-15"
-        animate={{
-          y: [0, -10, 0],
-          rotate: [0, 10, -10, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2,
-        }}
-      >
-        <Heart className="w-7 h-7 fill-current" />
-      </motion.div>
-
-      {/* Additional floating sparkles */}
-      <motion.div
-        className="absolute top-1/3 right-[25%] text-[#FFD000] opacity-20"
-        animate={{
-          scale: [1, 1.3, 1],
-          rotate: [0, 180, 360],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 0.5,
-        }}
-      >
-        <Sparkles className="w-6 h-6" />
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-1/4 right-[10%] text-[#D9443D] opacity-15"
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, -180, -360],
-          opacity: [0.15, 0.3, 0.15],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1.5,
-        }}
-      >
-        <Sparkles className="w-5 h-5" />
-      </motion.div>
-
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Left: Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center md:text-left"
-          >
-            <motion.h1
-              className="mb-4 text-4xl md:text-5xl lg:text-6xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Создадим вашу<br />
-              Лего-пару<br />
-              по фото
-            </motion.h1>
-
-            <motion.p
-              className="text-lg md:text-xl text-muted-foreground mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Вы присылаете фото, <br />
-              мы собираем с теплом и вниманием.
-            </motion.p>
-
-            {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <div className="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
-                {/* Основная кнопка */}
-                <Button
-                  onClick={onPreOrderClick}
-                  size="lg"
-                  className="bg-gradient-to-r from-[#D9443D] to-[#D9443D]/90 hover:from-[#D9443D]/90 hover:to-[#D9443D]/80 text-white rounded-full px-10 py-6 shadow-lg hover:shadow-2xl transition-all relative overflow-hidden group"
-                >
-                  <span className="relative z-10">Сделать предзаказ</span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.6 }}
-                  />
-                </Button>
-
-                {/* Вторичная кнопка */}
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() =>
-                    document
-                      .getElementById("how-it-works")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="border border-white/40 bg-white/50 backdrop-blur-md text-[#D9443D] hover:bg-white/70 rounded-full px-10 py-6 shadow-md transition-all relative z-20"
-                >
-                  Подробнее
-                </Button>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right: Image */}
-<motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8, delay: 0.3 }}
-  className="relative flex justify-center items-center"
->
-  {/* Decorative glow behind image — уменьшенная подложка */}
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[45%] bg-gradient-to-br from-[#D9443D]/15 via-[#FFD000]/10 to-[#2451B6]/10 rounded-3xl blur-xl -z-10 opacity-40" />
-
-{/* Radial spotlight glow (уменьшенная подложка) */}
-<motion.div
-  className="absolute -z-20"
-  animate={{
-    scale: [1, 1.05, 1],
-    opacity: [0.4, 0.6, 0.4],
-  }}
-  transition={{
-    duration: 4,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
->
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[45%] bg-gradient-to-br from-[#D9443D]/20 via-[#FFD000]/15 to-[#2451B6]/15 rounded-3xl blur-2xl opacity-50" />
-</motion.div>
-
-
-  {/* Image */}
-  <motion.div
-    animate={{ y: [0, -12, 0] }}
-    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-    className="rounded-3xl overflow-hidden shadow-2xl backdrop-blur-sm relative z-10"
-  >
-    <div className="relative rounded-3xl p-6 flex justify-center items-center">
+    <section
+      className="relative flex items-center justify-center min-h-screen overflow-hidden"
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+      }}
+    >
+      {/* LEGO-шар */}
       <img
-        src={heroImage}
-        alt="LEGO пара в рамке"
-        className="w-full h-auto rounded-3xl"
+        src={ornament}
+        alt="Лего-пара в шаре"
+        className="absolute left-[8%] top-[8%] w-[320px] md:w-[400px] lg:w-[440px]"
+        style={{
+          filter: "drop-shadow(0 0 35px rgba(255, 212, 121, 0.4))",
+        }}
       />
-    </div>
-  </motion.div>
-</motion.div>
 
+      {/* ПОДЛОЖКА */}
+      <div
+        className="relative z-10 max-w-[480px] rounded-2xl p-8 md:p-10"
+        style={{
+          background: "rgba(10, 10, 10, 0.55)",
+          backdropFilter: "blur(18px)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+          boxShadow: "0 8px 40px rgba(0, 0, 0, 0.45)",
+          marginLeft: "auto",
+          marginRight: "8%",
+        }}
+      >
+        <h1
+          style={{
+            color: "#FFFFFF",
+            fontSize: "2.6rem",
+            fontWeight: 800,
+            lineHeight: "1.3",
+            marginBottom: "1rem",
+            textShadow: "0 2px 8px rgba(0,0,0,0.5)",
+          }}
+        >
+          Создадим вашу <br /> Лего-пару по фото
+        </h1>
+
+        <p
+          style={{
+            color: "#FFF4E6",
+            fontSize: "1.05rem",
+            lineHeight: "1.6",
+            marginBottom: "2rem",
+          }}
+        >
+          Вы присылаете фото, мы собираем <br /> с теплом и вниманием.
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <button
+            onClick={onPreOrderClick}
+            style={{
+              background:
+                "linear-gradient(180deg, #FFD479 0%, #E9C46A 100%)",
+              color: "#050300",
+              padding: "12px 30px",
+              borderRadius: "9999px",
+              fontWeight: 600,
+              fontSize: "15px",
+              boxShadow: "0 0 15px rgba(255, 212, 121, 0.4)",
+              transition: "all 0.3s ease",
+            }}
+          >
+            Сделать предзаказ
+          </button>
+
+          <button
+            style={{
+              background: "rgba(255, 255, 255, 0.08)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              color: "#FFF4E6",
+              padding: "12px 30px",
+              borderRadius: "9999px",
+              fontWeight: 500,
+              fontSize: "15px",
+              transition: "all 0.3s ease",
+            }}
+          >
+            Подробнее
+          </button>
         </div>
       </div>
     </section>
   );
-}
+};
