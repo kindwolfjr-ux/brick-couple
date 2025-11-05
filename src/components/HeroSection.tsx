@@ -1,20 +1,23 @@
 import React from "react";
-import heroBg from "../assets/Hero_BG.png";
 import ornament from "../assets/игрушка.png";
 
 interface HeroSectionProps {
   onPreOrderClick?: () => void;
+  onLearnMoreClick?: () => void;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ onPreOrderClick }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({
+  onPreOrderClick,
+  onLearnMoreClick,
+}) => {
   return (
     <section
       className="relative flex flex-col md:flex-row items-center justify-center min-h-screen px-6 md:px-16 overflow-hidden"
+      style={{ paddingTop: "5vh" }}
     >
-      {/* ТЁМНЫЙ ОВЕРЛЕЙ */}
       <div className="absolute inset-0 bg-black/25" />
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20 w-full max-w-7xl mx-auto">
         {/* ТЕКСТОВОЙ БЛОК */}
         <div
           className="max-w-lg md:max-w-2xl p-10 md:p-12 rounded-[36px] shadow-[0_8px_50px_rgba(0,0,0,0.5)]"
@@ -29,11 +32,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onPreOrderClick }) => {
             Лего-пару по фото
           </h1>
 
-          <p className="text-[#FFF4E6] text-base md:text-xl leading-relaxed mb-10">
+          <p className="text-[#FFF4E6] text-base md:text-xl leading-relaxed mb-12">
             Вы присылаете фото, мы собираем <br /> с теплом и вниманием
           </p>
 
-          <div className="flex flex-wrap gap-5">
+          {/* КНОПКИ */}
+          <div className="flex flex-wrap gap-5 mt-4">
             <button
               onClick={onPreOrderClick}
               className="px-10 py-4 text-[#050300] text-lg font-semibold rounded-full
@@ -47,6 +51,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onPreOrderClick }) => {
             </button>
 
             <button
+              onClick={onLearnMoreClick}
               className="px-10 py-4 text-[#FFF4E6] text-lg font-medium rounded-full
               bg-white/10 border border-white/20
               hover:bg-white/20 hover:scale-[1.03]
@@ -58,11 +63,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onPreOrderClick }) => {
         </div>
 
         {/* ИЗОБРАЖЕНИЕ ШАРА */}
-        <div className="flex justify-center md:justify-end">
+        <div className="flex justify-center md:justify-end relative">
           <img
             src={ornament}
             alt="Лего-пара в шаре"
-            className="w-[300px] sm:w-[400px] md:w-[520px] drop-shadow-[0_0_40px_rgba(255,212,121,0.4)]"
+            className="w-[300px] sm:w-[400px] md:w-[520px]
+                       drop-shadow-[0_0_40px_rgba(255,212,121,0.4)]
+                       relative -top-12 md:-top-20"
           />
         </div>
       </div>

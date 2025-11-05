@@ -21,9 +21,12 @@ const steps = [
 
 const HowItWorksSection: React.FC = () => {
   return (
-    <section
-      className="relative py-24 px-6 md:px-16 flex flex-col items-center justify-center overflow-hidden"
-    >
+<section
+  id="how-it-works"
+  className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-16 overflow-hidden"
+>
+
+
       {/* Оверлей для затемнения */}
       <div className="absolute inset-0 bg-black/25" />
 
