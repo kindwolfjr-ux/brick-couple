@@ -23,12 +23,6 @@ const HowItWorksSection: React.FC = () => {
   return (
     <section
       className="relative py-24 px-6 md:px-16 flex flex-col items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `url(${howItWorksBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center top",
-        backgroundRepeat: "no-repeat",
-      }}
     >
       {/* Оверлей для затемнения */}
       <div className="absolute inset-0 bg-black/25" />

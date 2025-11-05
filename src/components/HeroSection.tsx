@@ -10,12 +10,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onPreOrderClick }) => {
   return (
     <section
       className="relative flex flex-col md:flex-row items-center justify-center min-h-screen px-6 md:px-16 overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center top",
-        backgroundRepeat: "no-repeat",
-      }}
     >
       {/* ТЁМНЫЙ ОВЕРЛЕЙ */}
       <div className="absolute inset-0 bg-black/25" />
