@@ -1,6 +1,7 @@
 import HeroSection from "./components/HeroSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import PreOrderSection from "./components/PreOrderSection";
+import { FormSection } from "./components/FormSection";
 import Footer from "./components/Footer";
 import "./global.css";
 
@@ -17,6 +18,7 @@ export default function App() {
       <HeroSection onPreOrderClick={handlePreOrderClick} />
       <HowItWorksSection />
       <PreOrderSection onPreOrderClick={handlePreOrderClick} />
+      <FormSection />
       <Footer />
     </div>
   );
