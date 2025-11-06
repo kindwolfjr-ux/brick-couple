@@ -44,7 +44,7 @@ const PreOrderSection: React.FC<PreOrderSectionProps> = ({ onPreOrderClick }) =>
               hover:scale-[1.03]
               transition-all duration-300"
           >
-            Забронировать набор
+            Забронировать
           </button>
         </div>
       </div>
