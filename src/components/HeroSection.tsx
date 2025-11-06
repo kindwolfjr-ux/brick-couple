@@ -36,7 +36,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Подзаголовок */}
           <p className="text-[#FFF4E6] text-base md:text-xl leading-relaxed mb-10">
-            Вы присылаете фото, мы собираем <br /> с теплом и вниманием
+            Чтобы каждая деталь напоминала о вас
           </p>
 
           {/* КНОПКИ */}
