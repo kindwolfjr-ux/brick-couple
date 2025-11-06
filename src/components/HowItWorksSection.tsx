@@ -1,123 +1,75 @@
-import { motion } from "motion/react";
-import { useInView } from "motion/react";
-import { useRef } from "react";
-import { Card } from "./ui/card";
-import { Camera, Search, Wrench, Gift } from "lucide-react";
+import React from "react";
+import howItWorksBg from "../assets/HowItWorks_BG.png";
 
 const steps = [
   {
-    number: 1,
+    number: "1",
     title: "Вы присылаете фото",
-    description: "Отправьте фото пары — этого достаточно, чтобы мы начали сборку",
-    icon: Camera,
-    color: "#D9443D",
+    text: "Одного снимка достаточно, чтобы мы поняли, как передать вас в деталях",
   },
   {
-    number: 2,
-    title: "Собираем вашу пару",
-    description: "Наша команда выбирает самые подходящие элементы — от прически до цвета одежды",
-    icon: Search,
-    color: "#2451B6",
+    number: "2",
+    title: "Создаем Лего-пару",
+    text: "Наша команда вручную подбирает волосы, одежду, аксессуары — всё, чтобы Лего-пара получилась похожая именно на вас",
   },
   {
-    number: 3,
-    title: "Отправляем в подарочной упаковке",
-    description: "Каждая фигурка создаётся вручную и с душой — чтобы получилась именно ваша Лего-пара",
-    icon: Wrench,
-    color: "#FFD000",
-  },
-  {
-    number: 4,
-    title: "Отправляем в подарочной упаковке",
-    description: "Вы получаете готовый набор — тёплый подарок, который обязательно вызовет улыбку",
-    icon: Gift,
-    color: "#D9443D",
+    number: "3",
+    title: "Упаковываем с настроением",
+    text: "Мы упаковываем Лего-пару как подарок. Чтобы ваш близкий человек почувствовал заботу",
   },
 ];
 
-export function HowItWorksSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-
+const HowItWorksSection: React.FC = () => {
   return (
-    <section
+<section
   id="how-it-works"
-  ref={ref}
-  className="py-16 relative overflow-hidden"
+  className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-16 overflow-hidden"
 >
-      {/* Background parallax decorative elements */}
-      <motion.div
-        className="absolute top-20 left-[5%] w-16 h-16 rounded-lg bg-[#D9443D]/5 rotate-12"
-        style={{
-          y: isInView ? 0 : 50,
-        }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      />
-      <motion.div
-        className="absolute bottom-40 right-[8%] w-20 h-20 rounded-lg bg-[#FFD000]/5 -rotate-6"
-        style={{
-          y: isInView ? 0 : -50,
-        }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-      />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="mb-4 text-3xl md:text-4xl">Как это работает</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Четыре простых шага до вашей Лего-пары
-          </p>
-        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                whileHover={{ y: -6 }}
-              >
-                <Card className="p-4 h-full hover:shadow-lg transition-all duration-300 border border-white/30 rounded-2xl relative overflow-hidden backdrop-blur-xl bg-white/40 shadow-[0_8px_32px_0_rgba(217,68,61,0.08)]">
-                  {/* Glass effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-transparent pointer-events-none" />
-                  
-                  <div className="flex flex-col items-center text-center relative z-10">
-                    <motion.div
-                      className="w-11 h-11 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm"
-                      style={{ backgroundColor: `${step.color}15` }}
-                      whileHover={{ scale: 1.15, rotate: 8 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <Icon className="w-5 h-5" style={{ color: step.color }} />
-                    </motion.div>
-                    
-                    <div
-                      className="mb-2 px-2.5 py-0.5 rounded-full inline-block backdrop-blur-sm text-sm"
-                      style={{ backgroundColor: `${step.color}20`, color: step.color }}
-                    >
-                      Шаг {step.number}
-                    </div>
-                    
-                    <h3 className="mb-1.5">{step.title}</h3>
-                    
-                    <p className="text-muted-foreground text-sm">
-                      {step.description}
-                    </p>
-                  </div>
-                </Card>
-              </motion.div>
-            );
-          })}
-        </div>
+
+      {/* Оверлей для затемнения */}
+      <div className="absolute inset-0 bg-black/25" />
+
+      <div className="relative z-10 text-center mb-16">
+        <h2 className="text-white font-extrabold text-4xl md:text-5xl mb-3">
+          Как мы создаём Лего-пару
+        </h2>
+        <p className="text-[#FFF4E6] text-lg md:text-xl">
+          Каждая пара проходит через руки нашей команды — от первого фото до готового подарка
+        </p>
+      </div>
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className="relative flex flex-col items-center text-center p-8 rounded-[32px]
+            bg-[rgba(10,10,10,0.65)] backdrop-blur-xl
+            border border-[rgba(255,255,255,0.08)]
+            shadow-[0_0_40px_rgba(0,0,0,0.3)]
+            hover:shadow-[0_0_60px_rgba(255,212,121,0.15)]
+            transition-all duration-500"
+          >
+            <div
+              className="absolute -top-6 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg
+              bg-gradient-to-b from-[#FFD479] to-[#E9C46A]
+              shadow-[0_0_20px_rgba(255,212,121,0.4)]
+              text-[#050300]"
+            >
+              {step.number}
+            </div>
+
+            <h3 className="text-white text-xl font-semibold mt-6 mb-4">
+              {step.title}
+            </h3>
+            <p className="text-[#FFF4E6] text-base leading-relaxed">
+              {step.text}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
-}
+};
+
+export default HowItWorksSection;

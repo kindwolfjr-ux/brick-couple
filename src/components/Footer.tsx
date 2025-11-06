@@ -1,83 +1,81 @@
 import { motion } from "motion/react";
-import { Heart } from "lucide-react";
+import { Heart, Sparkles } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="py-12 border-t border-border/30 relative">
-      <div className="container mx-auto px-4">
+    <footer
+      className="relative text-center py-16 border-t border-white/10"
+      style={{
+        backgroundColor: "#000000", // <-- ЧЁРНЫЙ ФОН
+      }}
+    >
+      <div className="max-w-3xl mx-auto px-6">
+        {/* Заголовок / бренд */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="mb-4 flex items-center justify-center gap-2"
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <Heart className="w-6 h-6 text-[#D9443D] fill-[#D9443D]" />
-            </motion.div>
-          </div>
-          
-          <p className="text-muted-foreground mb-2">
-            Проект <span className="relative inline-block">
-              Brick Couple
-              {/* Animated heart pulse behind "любовь" */}
-              <motion.span
-                className="absolute -left-1 top-1/2 -translate-y-1/2"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Heart className="w-4 h-4 text-[#D9443D] fill-[#D9443D] opacity-0" />
-              </motion.span>
-            </span> — <span className="relative inline-block">
-              любовь
-              <motion.span
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.2, 0.4, 0.2],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Heart className="w-8 h-8 text-[#D9443D] fill-[#D9443D]" />
-              </motion.span>
-            </span>, собранная из деталей.
-          </p>
-          
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
-            <span>Создано LEGO-энтузиастами из Москвы</span>
-          </div>
-
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <span>Сделано с</span>
-            <Heart className="w-4 h-4 text-[#D9443D] fill-[#D9443D]" />
-            <span>и настоящими деталями LEGO</span>
-          </div>
-
-          <p className="text-xs text-muted-foreground mt-6">
-          </p>
+          <Sparkles className="w-5 h-5 text-[#FFD479]" />
+          <h3
+            className="text-xl font-semibold tracking-tight"
+            style={{
+              color: "#FFF4E6",
+              textShadow: "0 2px 8px rgba(0,0,0,0.5)",
+            }}
+          >
+            Brick Couple
+          </h3>
+          <Sparkles className="w-5 h-5 text-[#FFD479]" />
         </motion.div>
+
+        {/* Основной текст */}
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-lg font-medium mb-3"
+          style={{
+            color: "#FFF4E6",
+            textShadow: "0 1px 8px rgba(0,0,0,0.4)",
+          }}
+        >
+          Любовь, собранная из деталей.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="text-sm mb-6"
+          style={{
+            color: "#FFD479",
+            textShadow: "0 1px 6px rgba(0,0,0,0.3)",
+          }}
+        >
+          Сделано вручную, с{" "}
+          <Heart className="inline w-4 h-4 text-[#E74C3C] fill-[#E74C3C]" /> и
+          настоящими деталями LEGO
+        </motion.p>
+
+        <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FFD479]/60 to-transparent mx-auto mb-6" />
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-xs text-[#FFF4E6]/60"
+          style={{
+            textShadow: "0 1px 4px rgba(0,0,0,0.3)",
+          }}
+        >
+          © {new Date().getFullYear()} Brick Couple. Все права защищены.
+        </motion.p>
       </div>
     </footer>
   );
 }
+
+export default Footer;
