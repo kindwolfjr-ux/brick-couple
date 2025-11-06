@@ -3,8 +3,9 @@ import HowItWorksSection from "./components/HowItWorksSection";
 import PreOrderSection from "./components/PreOrderSection";
 import { FormSection } from "./components/FormSection";
 import Footer from "./components/Footer";
+import { YandexMetrika } from "./components/YandexMetrika"; // ✅ Добавили Метрику
 
-import fullBg from "./assets/FULL_BG.png"; // ✅ Новый единый фон
+import fullBg from "./assets/FULL_BG.png";
 import "./global.css";
 
 export default function App() {
@@ -26,6 +27,9 @@ export default function App() {
 
   return (
     <div className="bg-black text-white font-sans overflow-x-hidden">
+      {/* 📈 Яндекс.Метрика */}
+      <YandexMetrika />
+
       {/* 🎄 Единый фон для Hero + HowItWorks */}
       <div
         style={{
